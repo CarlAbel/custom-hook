@@ -5,6 +5,7 @@ export default function Types({ types }) {
   const styles = {
     type: css`
       text-transform: capitalize;
+      list-style: none;
     `,
   }
   return (

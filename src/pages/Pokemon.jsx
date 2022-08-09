@@ -9,7 +9,9 @@ export default function Pokemon() {
     heading: css`
       text-transform: capitalize;
     `,
-    container: css``,
+    container: css`
+      text-align: center;
+    `,
   }
   const { name } = useParams()
   const { data, isLoading } = useFetch(
