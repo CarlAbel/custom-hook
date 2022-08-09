@@ -1,10 +1,30 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react"
 import { Link, Outlet } from "react-router-dom"
 
 export default function Layout() {
+  const styles = {
+    header: css`
+      height: 10vh;
+      h1 {
+        margin: 0;
+      }
+      menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    `,
+    content: css`
+      height: 90vh;
+      overflow-y: scroll;
+    `,
+  }
+
   return (
     <div>
-      <header>
-        <h1>Carlzitos Pokédex</h1>
+      <header css={styles.header}>
+        <h1>PokeDex</h1>
         <nav>
           <menu>
             <li>
@@ -13,7 +33,9 @@ export default function Layout() {
           </menu>
         </nav>
       </header>
-      <Outlet />
+      <main css={styles.content}>
+        <Outlet />
+      </main>
     </div>
   )
 }
